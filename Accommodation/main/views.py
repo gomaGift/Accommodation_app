@@ -376,6 +376,8 @@ class CustomLoginView(TemplateView):
             login(self.request, user)
             if user.user_role == "admin":
                 return redirect("dashboard")
+            else:
+                return redirect('home')
 
         else:
             return render(

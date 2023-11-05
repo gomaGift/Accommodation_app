@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,51 +8,30 @@
         <title>Sign Up Form</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./sign-up-style.css">
+        <link rel="stylesheet" href="{% static 'css/sign-up-style.css' %}">
     </head>
    
 <body>
     <div class="container">
       <div class="title">Registration Form</div>
       <div class="content">
-        <form action="/">
+        <form method="post">
+          {% csrf_token %}
           <div class="user-details">
+            {% for field in form %}
             <div class="input-box">
-              <span class="details">First Name</span>
-              <input type="text" placeholder="Enter your first name" required>
+              {{ field.label_tag }} <!-- Display the label -->
+              {{ field }}
             </div>
-            <div class="input-box">
-              <span class="details">Last Name</span>
-              <input type="text" placeholder="Enter your last name" required>
-            </div>
-            <div class="input-box">
-              <span class="details">mobile</span>
-              <input type="text" placeholder="Enter your mobile" required>
-            </div>
-            <div class="input-box">
-              <span class="details">Email</span>
-              <input type="text" placeholder="Enter your email" required>
-            </div>
-            <div class="input-box">
-              <span class="details">Password</span>
-              <input type="text" placeholder="Enter your password" required>
-            </div>
-            <div class="input-box">
-              <span class="details">Confirm Password</span>
-              <input type="text" placeholder="Confirm your password" required>
-            </div>
-          </div>
-          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            </div>
-          </div>
-          <div class="button">
-            <input type="submit" value="Register">
-          </div>
+            {% endfor %}
+            <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Sign up</button></div>
         </form>
+        <div>
+        
+      </div>
+      
       </div>
     </div>
-    <script src="./sign_up.js"></script>
+    <script src="{% static 'js/sign_up.js' %}"></script>
   </body>
   </html>
