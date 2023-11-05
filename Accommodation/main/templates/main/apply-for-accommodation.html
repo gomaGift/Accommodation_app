@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Accommodation</title>
+</head>
+<body>
+  <h1>Apply for Accommodation</h1>
+  <form id="accommodationForm" action="/apply-for-accommodation" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="roomType">Room Type:</label>
+    <select id="roomType" name="roomType">
+      <option value="single">Single Room</option>
+      <option value="double">Double Room</option>
+      <option value="suite">Suite</option>
+    </select>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</body>
+</html>

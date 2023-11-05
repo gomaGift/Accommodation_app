@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Housing Services</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/housing-services-styles.css' %}">
+    </head>
+    <body>
+        <div class="about-section">
+          <h2>Our Rooms</h2>
+          <img src="{% static 'img/Roomb.jpeg' %}" alt="" class="left-image">
+          <img src="{% static 'img/bed3.png' %}" alt="" class="right-image">
+          <p class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. ... </p>
+        </div>
+      
+        <div class="about-section">
+          <h2>Our Bathrooms</h2>
+          <img src="{% static 'img/Shower3.jpg' %}" alt="" class="left-image">
+          <img src="{% static 'img/toilet1.jpg' %}" alt="" class="right-image">
+        <p class="p2">Nulla facilisi. Suspendisse potenti. Fusce non ante quis ...</p>
+        </div>
+      
+        <div class="about-section">
+          <h2>Waiting Room</h2>
+          <img src="{% static 'img/Waiting1.jpg' %}" alt="" class="left-image">
+          <img src="{% static 'img/Waiting2.jpg' %}" alt="" class="right-image">
+          <p class="p3">Pellentesque consequat cursus libero, nec lacinia ...</p>
+        </div>
+      </body>
+      </html>

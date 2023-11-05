@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Dashboard</title>
+  <!-- Font Awesome CDN Link -->
+  <link rel="stylesheet" href="{% static 'css/application.css' %}">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="{% url 'dashboard' %}">UNZA</a>
+    </div>
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+        <img src="./pic/img.jpg" alt="">
+        <h4>{{request.user}}</h4>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+        <nav>
+        <div class="side_navbar">
+            <span>Main Menu</span>
+            <a href="{% url 'dashboard' %}" class="active">Dashboard</a>
+            <a href="{% url 'applications' %}">Applications</a>
+            <a href="{% url 'allocate' %}">Allocate Rooms</a>
+            <a href="{% url 'view' %}">View Allocated List</a>
+        </div>
+        </nav>
+
+    <div class="main-body">
+      <h2>Dashboard</h2>
+      <div class="promo_card">
+        <h1>Welcome to Accommodation Dashboard</h1>
+      </div>   
+        <p> <a href="{% url 'unallocate' %}">unallocate</a></p>
+        
+
+        <div class="content">
+            <div class="text">List of Allocated</div>
+            <table class="student-table">
+              <tr>
+                <th>Student ID</th>
+                <th>Full Name</th>
+                <th>Block Name</th>
+                <th>Room Assigned</th>
+              </tr>
+
+              {% for student in allocated_student_list %}
+
+              <tr>
+                <td class="student-info">{{student.id_num}}</td>
+                <td class="student-info">{{student.name}}</td>
+                <td class="student-info">{{student.room.hostel}}</td>
+                <td class="student-info">{{student.room.room_number}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+        </div>
+    </div>
+ </div>
+  
+<a href="{% url 'generate_pdf'  %}">Download list</a>
+</body>
+</html>

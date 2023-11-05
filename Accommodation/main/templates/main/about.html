@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <title>Responsive Card Design HTML and CSS | CodingNepal</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'css/about_style.css' %}">
+    </head>
+    <body>
+     <div class="card-list">
+        <a href="#" class="card-item">
+            <img src="{% static 'img/block 1.jpg' %}" alt="">
+            <span class="developer">Old Reis</span>
+            <h3>These were the first hostels to be built. 
+                It consists several blocks such as Kwacha,
+                President, Africa and International.
+            </h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="{% static 'img/Hostel.jpg' %}" alt="">
+            <span class="designer">New Reis</span>
+            <h3>These were the second hostels to be built. 
+                It consists several blocks such as Kafue,
+                Soweto, October, Kalingalinga, Tiyende Pamozi</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="{% static 'img/block4.jpg' %}" alt="">
+            <span class="editor">Vet</span>
+            <h3>These were the third hostels to be built. 
+                The building only accommodates males.It 
+                consists of several blocks such as BF,AF,
+                BG, AG, CG, CF, DG, DF.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

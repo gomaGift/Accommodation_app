@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Applicant List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/application.css' %}">
+    </head>
+
+    <body>
+      <a href="{% url 'allocate' %}">Allocate Rooms</a>
+
+        <div class="content">
+            <div class="text">List of Applicants</div>
+            <table class="student-table">
+              <tr>
+                <th>Student ID</th>
+                <th>Full Name</th>
+                <th>Student Status</th>
+                <th>Student Province</th>
+              </tr>
+              {% for application in applications %}
+              <tr>
+                <td class="student-info">{{ application.user.room }}</td>
+                <td class="student-info">{{ application.user.name }}</td>
+                <td class="student-info">{{ application.user.status }}</td>
+                <td class="student-info">{{ application.user.province }}</td>
+              </tr>
+
+              {% endfor %}
+             
+        
+              
+        
+            </table>
+          </div>
+        
+        <script src="" ></script>
+    </body>
+</html>
